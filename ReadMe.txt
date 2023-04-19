@@ -6,5 +6,5 @@
 
 1、main.py：直接运行，通过三种方法（均值/中位数/众数）填补缺失数据，并新增一些“missing”在记录是否曾缺失，然后RF训练，树数量和特征数为固定。自动选择accuracy最高的补缺方案，进行预测，并输出预测结果。
 2、analysis：（需要第1步的输出结果），读取已经通过均值方法预处理过的数据，输出数据特征分析结果，并存储
-3、RandomForest_features&estimator（改变：树数量、特征数），RandomForest_f&e+PCA（改变：维数、树数量、特征数），SVM&KNN：（需要第1步的输出结果）都是基于步骤1的输出（仅均值方法），进行更加细致的尝试和分析。
-4、drop：直接运行，将缺失数据行删除后，RF训练（改变：树数量、特征数），并保存accuracy
+3、RandomForest_features&estimator（改变：树数量、特征数），RandomForest_f&e+PCA（改变：维数、树数量、特征数），SVM&KNN（就是SVM & KNN）：都是基于步骤1的输出（仅均值方法），进行更加细致的尝试和分析。
+4、drop：直接运行，将缺失数据行删除后，RF训练（改变：树数量、特征数），并保存accuracy，（未输出预测结果，只是测试accuracy，不好故作罢）
