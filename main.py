@@ -111,6 +111,17 @@ y_train = train.iloc[:, -1]   # 标签
 X_val = validation.iloc[:, :-1]  # 特征
 y_val = validation.iloc[:, -1]   # 标签
 
+# 创建随机森林分类器并进行训练
+clf = RandomForestClassifier(n_estimators=20,max_features=5,max_depth=4, min_samples_split=50,random_state=42)
+clf.fit(X_train, y_train)
+
+# 读取用于预测的 CSV 文件
+test = test_data_list[idx]
+
+# 提取特征并进行预测
+X_test = test.iloc[:, :-1]  # 特征
+y_pred_test = clf.predict(X_test)  # 预测结果
+
 # 输出结果
 with open('D:/我的文件/learning/sem2/COMP7103 Data mining/assignment 2/output/PredictResult.csv', 'w') as fp:
     fp.write('Predict result:\n')
@@ -123,15 +134,3 @@ with open('D:/我的文件/learning/sem2/COMP7103 Data mining/assignment 2/outpu
             fp.write(f'C\n')
         elif y==3:
             fp.write(f'D\n')
-
-# 读取用于预测的 CSV 文件
-test = test_data_list[idx]
-
-# 提取特征并进行预测
-X_test = test.iloc[:, :-1]  # 特征
-y_pred_test = clf.predict(X_test)  # 预测结果
-
-# 输出结果
-fp = open('D:\我的文件\learning\sem2\COMP7103 Data mining\\assignment 2\output\PredictResult.csv', "a+") # a+ 如果文件不存在就创建。存在就在文件内容的后面继续追加
-print(f"Random Forest Accuracy:\n{y_pred_test}",file=fp)
-fp.close()
