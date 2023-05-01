@@ -111,9 +111,18 @@ y_train = train.iloc[:, -1]   # 标签
 X_val = validation.iloc[:, :-1]  # 特征
 y_val = validation.iloc[:, -1]   # 标签
 
-# 创建随机森林分类器并进行训练
-clf = RandomForestClassifier(n_estimators=20,max_features=5,max_depth=4, min_samples_split=50,random_state=42)
-clf.fit(X_train, y_train)
+# 输出结果
+with open('D:/我的文件/learning/sem2/COMP7103 Data mining/assignment 2/output/PredictResult.csv', 'w') as fp:
+    fp.write('Predict result:\n')
+    for y in y_pred_test:
+        if y==0:
+            fp.write(f'A\n')
+        elif y==1:
+            fp.write(f'B\n')
+        elif y==2:
+            fp.write(f'C\n')
+        elif y==3:
+            fp.write(f'D\n')
 
 # 读取用于预测的 CSV 文件
 test = test_data_list[idx]
