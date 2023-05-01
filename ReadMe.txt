@@ -1,3 +1,14 @@
+Caution:
+The ID of the original data needs to be deleted manually, the program does not handle this
+Store the data and change the path in the corresponding code before running the program, no further reminders in the steps
+The output will also need to be stored in a new folder.
+The following py files, not all have to be run, as required
+
+1, main.py: direct run, through the three methods (mean / median / plural) to fill in the missing data, and a new column of "missing" data, used to record whether the missing, and then RF training, the number of trees and features for a fixed number. Automatically select the solution with the highest accuracy, make predictions, and output the prediction results.
+2, analysis: (need the output of step 1), read the data that has been pre-processed by the mean method, output the data feature analysis results, and store
+3, RandomForest_features&estimator (change: number of trees, number of features), RandomForest_f&e+PCA (change: number of dimensions, number of trees, number of features), SVM&KNN (that is, SVM & KNN): all based on the output of step 1 (mean value method only), for more detailed attempts and analysis.
+4, drop: direct run, after removing the missing data rows, RF training (change: number of trees, number of features), and save accuracy, (not output prediction results, just test accuracy, it is not good so stop)
+
 注意：
 原始数据的ID需手动删除，程序对此未做处理
 存储数据，并修改相应代码中的路径后，在运行程序，步骤中不再提醒
